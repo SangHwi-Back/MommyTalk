@@ -1,0 +1,616 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1B6B641824EB483900F7505E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6B641724EB483900F7505E /* AppDelegate.swift */; };
+		1B6B641A24EB483900F7505E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6B641924EB483900F7505E /* SceneDelegate.swift */; };
+		1B6B641D24EB483900F7505E /* MommyTalk.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1B6B641B24EB483900F7505E /* MommyTalk.xcdatamodeld */; };
+		1B6B641F24EB483900F7505E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6B641E24EB483900F7505E /* ContentView.swift */; };
+		1B6B642124EB483B00F7505E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B6B642024EB483B00F7505E /* Assets.xcassets */; };
+		1B6B642424EB483B00F7505E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B6B642324EB483B00F7505E /* Preview Assets.xcassets */; };
+		1B6B642724EB483B00F7505E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B6B642524EB483B00F7505E /* LaunchScreen.storyboard */; };
+		1B6B643224EB483B00F7505E /* MommyTalkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6B643124EB483B00F7505E /* MommyTalkTests.swift */; };
+		1B6B643D24EB483B00F7505E /* MommyTalkUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6B643C24EB483B00F7505E /* MommyTalkUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1B6B642E24EB483B00F7505E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1B6B640C24EB483900F7505E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1B6B641324EB483900F7505E;
+			remoteInfo = MommyTalk;
+		};
+		1B6B643924EB483B00F7505E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1B6B640C24EB483900F7505E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1B6B641324EB483900F7505E;
+			remoteInfo = MommyTalk;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1B6B641424EB483900F7505E /* MommyTalk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MommyTalk.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B6B641724EB483900F7505E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1B6B641924EB483900F7505E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		1B6B641C24EB483900F7505E /* MommyTalk.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MommyTalk.xcdatamodel; sourceTree = "<group>"; };
+		1B6B641E24EB483900F7505E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		1B6B642024EB483B00F7505E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1B6B642324EB483B00F7505E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		1B6B642624EB483B00F7505E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1B6B642824EB483B00F7505E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1B6B642D24EB483B00F7505E /* MommyTalkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MommyTalkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B6B643124EB483B00F7505E /* MommyTalkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MommyTalkTests.swift; sourceTree = "<group>"; };
+		1B6B643324EB483B00F7505E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1B6B643824EB483B00F7505E /* MommyTalkUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MommyTalkUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B6B643C24EB483B00F7505E /* MommyTalkUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MommyTalkUITests.swift; sourceTree = "<group>"; };
+		1B6B643E24EB483B00F7505E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1B6B641124EB483900F7505E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1B6B642A24EB483B00F7505E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1B6B643524EB483B00F7505E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1B6B640B24EB483900F7505E = {
+			isa = PBXGroup;
+			children = (
+				1B6B641624EB483900F7505E /* MommyTalk */,
+				1B6B643024EB483B00F7505E /* MommyTalkTests */,
+				1B6B643B24EB483B00F7505E /* MommyTalkUITests */,
+				1B6B641524EB483900F7505E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1B6B641524EB483900F7505E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1B6B641424EB483900F7505E /* MommyTalk.app */,
+				1B6B642D24EB483B00F7505E /* MommyTalkTests.xctest */,
+				1B6B643824EB483B00F7505E /* MommyTalkUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1B6B641624EB483900F7505E /* MommyTalk */ = {
+			isa = PBXGroup;
+			children = (
+				1B6B641724EB483900F7505E /* AppDelegate.swift */,
+				1B6B641924EB483900F7505E /* SceneDelegate.swift */,
+				1B6B641E24EB483900F7505E /* ContentView.swift */,
+				1B6B642024EB483B00F7505E /* Assets.xcassets */,
+				1B6B642524EB483B00F7505E /* LaunchScreen.storyboard */,
+				1B6B642824EB483B00F7505E /* Info.plist */,
+				1B6B641B24EB483900F7505E /* MommyTalk.xcdatamodeld */,
+				1B6B642224EB483B00F7505E /* Preview Content */,
+			);
+			path = MommyTalk;
+			sourceTree = "<group>";
+		};
+		1B6B642224EB483B00F7505E /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				1B6B642324EB483B00F7505E /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		1B6B643024EB483B00F7505E /* MommyTalkTests */ = {
+			isa = PBXGroup;
+			children = (
+				1B6B643124EB483B00F7505E /* MommyTalkTests.swift */,
+				1B6B643324EB483B00F7505E /* Info.plist */,
+			);
+			path = MommyTalkTests;
+			sourceTree = "<group>";
+		};
+		1B6B643B24EB483B00F7505E /* MommyTalkUITests */ = {
+			isa = PBXGroup;
+			children = (
+				1B6B643C24EB483B00F7505E /* MommyTalkUITests.swift */,
+				1B6B643E24EB483B00F7505E /* Info.plist */,
+			);
+			path = MommyTalkUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1B6B641324EB483900F7505E /* MommyTalk */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1B6B644124EB483B00F7505E /* Build configuration list for PBXNativeTarget "MommyTalk" */;
+			buildPhases = (
+				1B6B641024EB483900F7505E /* Sources */,
+				1B6B641124EB483900F7505E /* Frameworks */,
+				1B6B641224EB483900F7505E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MommyTalk;
+			productName = MommyTalk;
+			productReference = 1B6B641424EB483900F7505E /* MommyTalk.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1B6B642C24EB483B00F7505E /* MommyTalkTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1B6B644424EB483B00F7505E /* Build configuration list for PBXNativeTarget "MommyTalkTests" */;
+			buildPhases = (
+				1B6B642924EB483B00F7505E /* Sources */,
+				1B6B642A24EB483B00F7505E /* Frameworks */,
+				1B6B642B24EB483B00F7505E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1B6B642F24EB483B00F7505E /* PBXTargetDependency */,
+			);
+			name = MommyTalkTests;
+			productName = MommyTalkTests;
+			productReference = 1B6B642D24EB483B00F7505E /* MommyTalkTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		1B6B643724EB483B00F7505E /* MommyTalkUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1B6B644724EB483B00F7505E /* Build configuration list for PBXNativeTarget "MommyTalkUITests" */;
+			buildPhases = (
+				1B6B643424EB483B00F7505E /* Sources */,
+				1B6B643524EB483B00F7505E /* Frameworks */,
+				1B6B643624EB483B00F7505E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1B6B643A24EB483B00F7505E /* PBXTargetDependency */,
+			);
+			name = MommyTalkUITests;
+			productName = MommyTalkUITests;
+			productReference = 1B6B643824EB483B00F7505E /* MommyTalkUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1B6B640C24EB483900F7505E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1160;
+				LastUpgradeCheck = 1160;
+				ORGANIZATIONNAME = "Sanghwi Back";
+				TargetAttributes = {
+					1B6B641324EB483900F7505E = {
+						CreatedOnToolsVersion = 11.6;
+					};
+					1B6B642C24EB483B00F7505E = {
+						CreatedOnToolsVersion = 11.6;
+						TestTargetID = 1B6B641324EB483900F7505E;
+					};
+					1B6B643724EB483B00F7505E = {
+						CreatedOnToolsVersion = 11.6;
+						TestTargetID = 1B6B641324EB483900F7505E;
+					};
+				};
+			};
+			buildConfigurationList = 1B6B640F24EB483900F7505E /* Build configuration list for PBXProject "MommyTalk" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1B6B640B24EB483900F7505E;
+			productRefGroup = 1B6B641524EB483900F7505E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1B6B641324EB483900F7505E /* MommyTalk */,
+				1B6B642C24EB483B00F7505E /* MommyTalkTests */,
+				1B6B643724EB483B00F7505E /* MommyTalkUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1B6B641224EB483900F7505E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B6B642724EB483B00F7505E /* LaunchScreen.storyboard in Resources */,
+				1B6B642424EB483B00F7505E /* Preview Assets.xcassets in Resources */,
+				1B6B642124EB483B00F7505E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1B6B642B24EB483B00F7505E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1B6B643624EB483B00F7505E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1B6B641024EB483900F7505E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B6B641824EB483900F7505E /* AppDelegate.swift in Sources */,
+				1B6B641A24EB483900F7505E /* SceneDelegate.swift in Sources */,
+				1B6B641F24EB483900F7505E /* ContentView.swift in Sources */,
+				1B6B641D24EB483900F7505E /* MommyTalk.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1B6B642924EB483B00F7505E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B6B643224EB483B00F7505E /* MommyTalkTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1B6B643424EB483B00F7505E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B6B643D24EB483B00F7505E /* MommyTalkUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1B6B642F24EB483B00F7505E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1B6B641324EB483900F7505E /* MommyTalk */;
+			targetProxy = 1B6B642E24EB483B00F7505E /* PBXContainerItemProxy */;
+		};
+		1B6B643A24EB483B00F7505E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1B6B641324EB483900F7505E /* MommyTalk */;
+			targetProxy = 1B6B643924EB483B00F7505E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1B6B642524EB483B00F7505E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1B6B642624EB483B00F7505E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1B6B643F24EB483B00F7505E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		1B6B644024EB483B00F7505E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1B6B644224EB483B00F7505E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"MommyTalk/Preview Content\"";
+				DEVELOPMENT_TEAM = L3ZPWB4HNK;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = MommyTalk/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sanghwi.MommyTalk;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1B6B644324EB483B00F7505E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"MommyTalk/Preview Content\"";
+				DEVELOPMENT_TEAM = L3ZPWB4HNK;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = MommyTalk/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sanghwi.MommyTalk;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		1B6B644524EB483B00F7505E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L3ZPWB4HNK;
+				INFOPLIST_FILE = MommyTalkTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sanghwi.MommyTalkTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MommyTalk.app/MommyTalk";
+			};
+			name = Debug;
+		};
+		1B6B644624EB483B00F7505E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L3ZPWB4HNK;
+				INFOPLIST_FILE = MommyTalkTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sanghwi.MommyTalkTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MommyTalk.app/MommyTalk";
+			};
+			name = Release;
+		};
+		1B6B644824EB483B00F7505E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L3ZPWB4HNK;
+				INFOPLIST_FILE = MommyTalkUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sanghwi.MommyTalkUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MommyTalk;
+			};
+			name = Debug;
+		};
+		1B6B644924EB483B00F7505E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L3ZPWB4HNK;
+				INFOPLIST_FILE = MommyTalkUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sanghwi.MommyTalkUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MommyTalk;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1B6B640F24EB483900F7505E /* Build configuration list for PBXProject "MommyTalk" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1B6B643F24EB483B00F7505E /* Debug */,
+				1B6B644024EB483B00F7505E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1B6B644124EB483B00F7505E /* Build configuration list for PBXNativeTarget "MommyTalk" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1B6B644224EB483B00F7505E /* Debug */,
+				1B6B644324EB483B00F7505E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1B6B644424EB483B00F7505E /* Build configuration list for PBXNativeTarget "MommyTalkTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1B6B644524EB483B00F7505E /* Debug */,
+				1B6B644624EB483B00F7505E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1B6B644724EB483B00F7505E /* Build configuration list for PBXNativeTarget "MommyTalkUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1B6B644824EB483B00F7505E /* Debug */,
+				1B6B644924EB483B00F7505E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		1B6B641B24EB483900F7505E /* MommyTalk.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				1B6B641C24EB483900F7505E /* MommyTalk.xcdatamodel */,
+			);
+			currentVersion = 1B6B641C24EB483900F7505E /* MommyTalk.xcdatamodel */;
+			path = MommyTalk.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 1B6B640C24EB483900F7505E /* Project object */;
+}
