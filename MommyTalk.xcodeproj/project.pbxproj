@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00D2BEB0D6AD0E8ACF6C8FDC /* Pods_MommyTalk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9915BC6C7C87EB1ED472F12E /* Pods_MommyTalk.framework */; };
+		1B4C342924EDFB2800ADCDC8 /* AppEnvironmentObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4C342824EDFB2800ADCDC8 /* AppEnvironmentObject.swift */; };
 		1B6B641824EB483900F7505E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6B641724EB483900F7505E /* AppDelegate.swift */; };
 		1B6B641A24EB483900F7505E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6B641924EB483900F7505E /* SceneDelegate.swift */; };
 		1B6B641D24EB483900F7505E /* MommyTalk.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1B6B641B24EB483900F7505E /* MommyTalk.xcdatamodeld */; };
@@ -16,6 +18,16 @@
 		1B6B642724EB483B00F7505E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B6B642524EB483B00F7505E /* LaunchScreen.storyboard */; };
 		1B6B643224EB483B00F7505E /* MommyTalkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6B643124EB483B00F7505E /* MommyTalkTests.swift */; };
 		1B6B643D24EB483B00F7505E /* MommyTalkUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6B643C24EB483B00F7505E /* MommyTalkUITests.swift */; };
+		1B6B644C24EB521B00F7505E /* InitialConfirmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6B644B24EB521B00F7505E /* InitialConfirmView.swift */; };
+		1B6B644E24EB6B3200F7505E /* InitialViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6B644D24EB6B3200F7505E /* InitialViewModel.swift */; };
+		1B6B645124EB71ED00F7505E /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6B645024EB71ED00F7505E /* Model.swift */; };
+		1B6B645324EBA7C600F7505E /* SubContent280DaysView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6B645224EBA7C600F7505E /* SubContent280DaysView.swift */; };
+		1B6B645524EBA7F400F7505E /* SubContentSuperSonicWaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6B645424EBA7F400F7505E /* SubContentSuperSonicWaveView.swift */; };
+		1B6B645724EBA81200F7505E /* SubContentCommunityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6B645624EBA81200F7505E /* SubContentCommunityView.swift */; };
+		1B6B645924EBA81F00F7505E /* SubContentShoppingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6B645824EBA81F00F7505E /* SubContentShoppingView.swift */; };
+		1B6B645B24EBA82B00F7505E /* SubContentMyInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6B645A24EBA82B00F7505E /* SubContentMyInfoView.swift */; };
+		87A7AA76FA643D9F1B78E9D5 /* Pods_MommyTalk_MommyTalkUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB6D0910A6C03AC93612CF31 /* Pods_MommyTalk_MommyTalkUITests.framework */; };
+		CAE85F8CB6323B79133C1BC4 /* Pods_MommyTalkTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82F1F712EA31D864AE64F430 /* Pods_MommyTalkTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +48,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		15A3C45AD41E3BE2C8F7CAC8 /* Pods-MommyTalkTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MommyTalkTests.debug.xcconfig"; path = "Target Support Files/Pods-MommyTalkTests/Pods-MommyTalkTests.debug.xcconfig"; sourceTree = "<group>"; };
+		1B4C342824EDFB2800ADCDC8 /* AppEnvironmentObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironmentObject.swift; sourceTree = "<group>"; };
 		1B6B641424EB483900F7505E /* MommyTalk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MommyTalk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B6B641724EB483900F7505E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1B6B641924EB483900F7505E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +65,22 @@
 		1B6B643824EB483B00F7505E /* MommyTalkUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MommyTalkUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B6B643C24EB483B00F7505E /* MommyTalkUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MommyTalkUITests.swift; sourceTree = "<group>"; };
 		1B6B643E24EB483B00F7505E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1B6B644B24EB521B00F7505E /* InitialConfirmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialConfirmView.swift; sourceTree = "<group>"; };
+		1B6B644D24EB6B3200F7505E /* InitialViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewModel.swift; sourceTree = "<group>"; };
+		1B6B645024EB71ED00F7505E /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		1B6B645224EBA7C600F7505E /* SubContent280DaysView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubContent280DaysView.swift; sourceTree = "<group>"; };
+		1B6B645424EBA7F400F7505E /* SubContentSuperSonicWaveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubContentSuperSonicWaveView.swift; sourceTree = "<group>"; };
+		1B6B645624EBA81200F7505E /* SubContentCommunityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubContentCommunityView.swift; sourceTree = "<group>"; };
+		1B6B645824EBA81F00F7505E /* SubContentShoppingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubContentShoppingView.swift; sourceTree = "<group>"; };
+		1B6B645A24EBA82B00F7505E /* SubContentMyInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubContentMyInfoView.swift; sourceTree = "<group>"; };
+		333A2DB7566D18E72E2E59B0 /* Pods-MommyTalk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MommyTalk.debug.xcconfig"; path = "Target Support Files/Pods-MommyTalk/Pods-MommyTalk.debug.xcconfig"; sourceTree = "<group>"; };
+		59521D46985CFD760910ED4C /* Pods-MommyTalk-MommyTalkUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MommyTalk-MommyTalkUITests.release.xcconfig"; path = "Target Support Files/Pods-MommyTalk-MommyTalkUITests/Pods-MommyTalk-MommyTalkUITests.release.xcconfig"; sourceTree = "<group>"; };
+		7406723B26A15D5C32B95A04 /* Pods-MommyTalk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MommyTalk.release.xcconfig"; path = "Target Support Files/Pods-MommyTalk/Pods-MommyTalk.release.xcconfig"; sourceTree = "<group>"; };
+		82F1F712EA31D864AE64F430 /* Pods_MommyTalkTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MommyTalkTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B04BE796D9434E56B7BAEAD /* Pods-MommyTalk-MommyTalkUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MommyTalk-MommyTalkUITests.debug.xcconfig"; path = "Target Support Files/Pods-MommyTalk-MommyTalkUITests/Pods-MommyTalk-MommyTalkUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		9915BC6C7C87EB1ED472F12E /* Pods_MommyTalk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MommyTalk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB6D0910A6C03AC93612CF31 /* Pods_MommyTalk_MommyTalkUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MommyTalk_MommyTalkUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4368F7C78A82FE1E03309A4 /* Pods-MommyTalkTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MommyTalkTests.release.xcconfig"; path = "Target Support Files/Pods-MommyTalkTests/Pods-MommyTalkTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00D2BEB0D6AD0E8ACF6C8FDC /* Pods_MommyTalk.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CAE85F8CB6323B79133C1BC4 /* Pods_MommyTalkTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87A7AA76FA643D9F1B78E9D5 /* Pods_MommyTalk_MommyTalkUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +118,8 @@
 				1B6B643024EB483B00F7505E /* MommyTalkTests */,
 				1B6B643B24EB483B00F7505E /* MommyTalkUITests */,
 				1B6B641524EB483900F7505E /* Products */,
+				46EBC3238F94BBAC0CFA07AD /* Pods */,
+				CE551C843CBD4D3F90580E6F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,7 +138,10 @@
 			children = (
 				1B6B641724EB483900F7505E /* AppDelegate.swift */,
 				1B6B641924EB483900F7505E /* SceneDelegate.swift */,
-				1B6B641E24EB483900F7505E /* ContentView.swift */,
+				1B6B645024EB71ED00F7505E /* Model.swift */,
+				1B4C342824EDFB2800ADCDC8 /* AppEnvironmentObject.swift */,
+				1B6B644F24EB6B3600F7505E /* ViewModel */,
+				1B6B644A24EB48FA00F7505E /* View */,
 				1B6B642024EB483B00F7505E /* Assets.xcassets */,
 				1B6B642524EB483B00F7505E /* LaunchScreen.storyboard */,
 				1B6B642824EB483B00F7505E /* Info.plist */,
@@ -139,6 +177,51 @@
 			path = MommyTalkUITests;
 			sourceTree = "<group>";
 		};
+		1B6B644A24EB48FA00F7505E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1B6B644B24EB521B00F7505E /* InitialConfirmView.swift */,
+				1B6B641E24EB483900F7505E /* ContentView.swift */,
+				1B6B645224EBA7C600F7505E /* SubContent280DaysView.swift */,
+				1B6B645424EBA7F400F7505E /* SubContentSuperSonicWaveView.swift */,
+				1B6B645624EBA81200F7505E /* SubContentCommunityView.swift */,
+				1B6B645824EBA81F00F7505E /* SubContentShoppingView.swift */,
+				1B6B645A24EBA82B00F7505E /* SubContentMyInfoView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1B6B644F24EB6B3600F7505E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1B6B644D24EB6B3200F7505E /* InitialViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		46EBC3238F94BBAC0CFA07AD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				333A2DB7566D18E72E2E59B0 /* Pods-MommyTalk.debug.xcconfig */,
+				7406723B26A15D5C32B95A04 /* Pods-MommyTalk.release.xcconfig */,
+				8B04BE796D9434E56B7BAEAD /* Pods-MommyTalk-MommyTalkUITests.debug.xcconfig */,
+				59521D46985CFD760910ED4C /* Pods-MommyTalk-MommyTalkUITests.release.xcconfig */,
+				15A3C45AD41E3BE2C8F7CAC8 /* Pods-MommyTalkTests.debug.xcconfig */,
+				F4368F7C78A82FE1E03309A4 /* Pods-MommyTalkTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		CE551C843CBD4D3F90580E6F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9915BC6C7C87EB1ED472F12E /* Pods_MommyTalk.framework */,
+				EB6D0910A6C03AC93612CF31 /* Pods_MommyTalk_MommyTalkUITests.framework */,
+				82F1F712EA31D864AE64F430 /* Pods_MommyTalkTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -146,9 +229,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1B6B644124EB483B00F7505E /* Build configuration list for PBXNativeTarget "MommyTalk" */;
 			buildPhases = (
+				0A99BF02EAAA65E122484CB8 /* [CP] Check Pods Manifest.lock */,
 				1B6B641024EB483900F7505E /* Sources */,
 				1B6B641124EB483900F7505E /* Frameworks */,
 				1B6B641224EB483900F7505E /* Resources */,
+				3598EBD3B9431847AC1D8F72 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -163,6 +248,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1B6B644424EB483B00F7505E /* Build configuration list for PBXNativeTarget "MommyTalkTests" */;
 			buildPhases = (
+				2FDF0D517B902B3AAE5A1C95 /* [CP] Check Pods Manifest.lock */,
 				1B6B642924EB483B00F7505E /* Sources */,
 				1B6B642A24EB483B00F7505E /* Frameworks */,
 				1B6B642B24EB483B00F7505E /* Resources */,
@@ -181,9 +267,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1B6B644724EB483B00F7505E /* Build configuration list for PBXNativeTarget "MommyTalkUITests" */;
 			buildPhases = (
+				69958689B09CC5E12285FB09 /* [CP] Check Pods Manifest.lock */,
 				1B6B643424EB483B00F7505E /* Sources */,
 				1B6B643524EB483B00F7505E /* Frameworks */,
 				1B6B643624EB483B00F7505E /* Resources */,
+				6FA4F7E7B955D895833887CA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -265,15 +353,127 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0A99BF02EAAA65E122484CB8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MommyTalk-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2FDF0D517B902B3AAE5A1C95 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MommyTalkTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3598EBD3B9431847AC1D8F72 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MommyTalk/Pods-MommyTalk-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MommyTalk/Pods-MommyTalk-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MommyTalk/Pods-MommyTalk-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		69958689B09CC5E12285FB09 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MommyTalk-MommyTalkUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6FA4F7E7B955D895833887CA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MommyTalk-MommyTalkUITests/Pods-MommyTalk-MommyTalkUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MommyTalk-MommyTalkUITests/Pods-MommyTalk-MommyTalkUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MommyTalk-MommyTalkUITests/Pods-MommyTalk-MommyTalkUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1B6B641024EB483900F7505E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B6B645124EB71ED00F7505E /* Model.swift in Sources */,
+				1B6B645924EBA81F00F7505E /* SubContentShoppingView.swift in Sources */,
+				1B6B645524EBA7F400F7505E /* SubContentSuperSonicWaveView.swift in Sources */,
+				1B6B645324EBA7C600F7505E /* SubContent280DaysView.swift in Sources */,
 				1B6B641824EB483900F7505E /* AppDelegate.swift in Sources */,
+				1B4C342924EDFB2800ADCDC8 /* AppEnvironmentObject.swift in Sources */,
 				1B6B641A24EB483900F7505E /* SceneDelegate.swift in Sources */,
+				1B6B644C24EB521B00F7505E /* InitialConfirmView.swift in Sources */,
 				1B6B641F24EB483900F7505E /* ContentView.swift in Sources */,
+				1B6B645724EBA81200F7505E /* SubContentCommunityView.swift in Sources */,
 				1B6B641D24EB483900F7505E /* MommyTalk.xcdatamodeld in Sources */,
+				1B6B644E24EB6B3200F7505E /* InitialViewModel.swift in Sources */,
+				1B6B645B24EBA82B00F7505E /* SubContentMyInfoView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,6 +636,7 @@
 		};
 		1B6B644224EB483B00F7505E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 333A2DB7566D18E72E2E59B0 /* Pods-MommyTalk.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -456,6 +657,7 @@
 		};
 		1B6B644324EB483B00F7505E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7406723B26A15D5C32B95A04 /* Pods-MommyTalk.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -476,6 +678,7 @@
 		};
 		1B6B644524EB483B00F7505E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 15A3C45AD41E3BE2C8F7CAC8 /* Pods-MommyTalkTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -498,6 +701,7 @@
 		};
 		1B6B644624EB483B00F7505E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F4368F7C78A82FE1E03309A4 /* Pods-MommyTalkTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -520,6 +724,7 @@
 		};
 		1B6B644824EB483B00F7505E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8B04BE796D9434E56B7BAEAD /* Pods-MommyTalk-MommyTalkUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -540,6 +745,7 @@
 		};
 		1B6B644924EB483B00F7505E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 59521D46985CFD760910ED4C /* Pods-MommyTalk-MommyTalkUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

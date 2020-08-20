@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "DetailInitialConfirmImage2Cropped.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "DetailInitialConfirmImage2Cropped@2x.png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "DetailInitialConfirmImage2Cropped@3x.png",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
