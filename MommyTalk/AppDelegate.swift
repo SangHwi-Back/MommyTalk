@@ -8,14 +8,25 @@
 
 import UIKit
 import CoreData
+import Foundation
+import SQLite3
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    var SQLiteDatabase: OpaquePointer?
+    var sQLiteDatabaseUtil: SQLiteDatabaseUtil?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        SQLiteDatabase = openDatabase(path: "/Users/sanghwiback/Desktop/Developer/Clone Coding/MommyTalk/MommyTalk/MommyTalk/Database/MommyTalkCommunityArticle.sqlite3")
+        
+        if let SQLiteDatabase = SQLiteDatabase {
+            self.sQLiteDatabaseUtil = SQLiteDatabaseUtil(database: SQLiteDatabase)
+        } else {
+            fatalError("!!!SQLite!!! database not initialized")
+        }
+        
         return true
     }
 
@@ -76,6 +87,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }
         }
+    }
+
+    //MARK: - Sqlite setting
+    func openDatabase(path: String) -> OpaquePointer? {
+        return sqlite3_open(path, &SQLiteDatabase) == SQLITE_OK ? SQLiteDatabase : nil
+        
+//        if sqlite3_open(path, &db) == SQLITE_OK {
+//            return db
+//        } else {
+//            return nil
+//        }
     }
 
 }

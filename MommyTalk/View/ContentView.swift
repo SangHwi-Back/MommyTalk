@@ -11,7 +11,10 @@ import SwiftUI
 struct ContentView: View {
     let viewModel = InitialViewModel()
 
-    let detailInitialConfirmImageNames = ["DetailInitialConfirmImage1Cropped","DetailInitialConfirmImage2Cropped","DetailInitialConfirmImage3Cropped"
+    let detailInitialConfirmImageNames = [
+        "DetailInitialConfirmImage1Cropped",
+        "DetailInitialConfirmImage2Cropped",
+        "DetailInitialConfirmImage3Cropped"
     ]
     
     @EnvironmentObject var appEnvironmentObject: AppEnvironmentObject
@@ -27,31 +30,31 @@ struct ContentView: View {
                             Image(systemName: "tv")
                             Text("280 days")
                         }
-                    }
+                    }.tag(0)
                     SubContentSuperSonicWaveView().tabItem {
                         VStack {
                             Image(systemName: "tv")
                             Text("초음파")
                         }
-                    }
-                    SubContentCommunityView().tabItem {
+                    }.tag(1)
+                    SubContentCommunityView(viewModel: SubContentCommunityViewModel()).tabItem {
                         VStack {
                             Image(systemName: "tv")
                             Text("커뮤니티")
                         }
-                    }
+                    }.tag(2)
                     SubContentShoppingView().tabItem {
                         VStack {
                             Image(systemName: "tv")
                             Text("쇼핑")
                         }
-                    }
+                    }.tag(3)
                     SubContentMyInfoView().tabItem {
                         VStack {
                             Image(systemName: "tv")
                             Text("내정보")
                         }
-                    }
+                    }.tag(4)
                 }
             } else {
                 InitialConfirmView(self.detailInitialConfirmImageNames.map({DetailInitialConfirmView(imageName: $0)}))

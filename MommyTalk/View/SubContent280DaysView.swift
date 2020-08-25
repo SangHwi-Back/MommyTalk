@@ -27,3 +27,9 @@ struct SubContent280DaysView: View {
         }
     }
 }
+
+struct SubContent280DaysView_Previews: PreviewProvider {
+    static var previews: some View {
+        SubContent280DaysView()
+    }
+}

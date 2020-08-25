@@ -16,16 +16,10 @@ struct InitialConfirmView<Page: View>: View {
     @State var privateAgreementShow: Bool = false
     @State var eventNotificationShow: Bool = false
     @State var currentIndex: Int = 0
-//    @Binding var isConfirmed: Bool
     
     @EnvironmentObject var appEnvironmentObject: AppEnvironmentObject
     
     var viewControllers: [UIHostingController<Page>]
-    
-//    init(_ views: [Page], _ isConfirmed: Binding<Bool>) {
-//        self.viewControllers = views.map{ UIHostingController(rootView: $0) }
-//        self._isConfirmed = isConfirmed
-//    }
     
     init(_ views: [Page]) {
         self.viewControllers = views.map{ UIHostingController(rootView: $0) }

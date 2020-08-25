@@ -11,6 +11,8 @@ import Combine
 
 class AppEnvironmentObject: ObservableObject {
     @Published var isConfirmed = false
+    @Published var selectedTabBarIndex = 0
+    @Published var selectedCommunityCategoryIndex = 0
     
     private var autosave: AnyCancellable?
     
