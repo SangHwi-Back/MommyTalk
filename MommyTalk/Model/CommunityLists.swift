@@ -18,11 +18,19 @@ struct CommunityLists<ArticleId> where ArticleId: Equatable {
     init(_ category: String, dbUtil: SQLiteDatabaseUtil) {
         self.category = category
         self.dbUtil = dbUtil
-        self.articles = self.dbUtil.queryCommunityArticles(self.category)
+        self.articles = self.dbUtil.queryCommunityArticles(category: self.category)
     }
     
     mutating func queryArticles(_ category: String) {
-        self.articles = dbUtil.queryCommunityArticles(category)
+        self.articles = dbUtil.queryCommunityArticles(category: category)
+    }
+    
+    func createCommunityArticle(article: Article) -> Bool {
+        return dbUtil.createCommunityArticle(article: article)
+    }
+    
+    func deleteCommunityArticle(id: String) -> Bool {
+        return dbUtil.deleteCommunityArticle(id: id)
     }
     
 }

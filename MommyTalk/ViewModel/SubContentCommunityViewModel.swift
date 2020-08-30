@@ -13,8 +13,8 @@ class SubContentCommunityViewModel: ObservableObject {
     
     @Published private var model: CommunityLists<String> = createCategoryArticles()
     
-    var category: String
-    var appDelegate: AppDelegate
+    private(set) var category: String
+    private var appDelegate: AppDelegate
     
     init(_ category: String = "명예의 전당") {
         self.category = category
@@ -33,4 +33,11 @@ class SubContentCommunityViewModel: ObservableObject {
         model.queryArticles(category)
     }
     
+    func createCommunityArticle(article: Article) -> Bool {
+        return model.createCommunityArticle(article: article)
+    }
+    
+    func deleteCommunityArticle(id: String) -> Bool {
+        return model.deleteCommunityArticle(id: id)
+    }
 }

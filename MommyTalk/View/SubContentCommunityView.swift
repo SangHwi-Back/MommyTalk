@@ -58,7 +58,7 @@ struct SubContentCommunityView: View {
                             category: self.communityCategories[selectedCommunityIndex],
                             articles: self.viewModel.getArticles())
                         GeometryReader { geometry in
-                            NavigationLink(destination: ConstructingArticleView(communityCategories: self.communityCategories)) {
+                            NavigationLink(destination: ConstructingArticleView(viewModel: self.viewModel, communityCategories: self.communityCategories)) {
                                 ZStack {
                                     Circle()
                                         .foregroundColor(Color.white)

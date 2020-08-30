@@ -21,7 +21,7 @@ struct CommunityRow: View {
     
     var body: some View {
         HStack(spacing: 20) {
-            VStack {
+            VStack(alignment: .leading) {
                 (Text(self.isHashTag == 0 ? "[Event] " : (self.isHashTag == 1 ? "#HashTag " : "없음 "))+Text(self.rowTitle))
                     .font(.callout)
                     .lineLimit(2).frame(alignment: .leading)
@@ -43,7 +43,7 @@ struct CommunityRow: View {
                 }.foregroundColor(Color.gray.opacity(0.7)).font(.footnote)
             }
             
-            ZStack(alignment: .center) {
+            ZStack(alignment: .leading) {
                 Rectangle()
                     .foregroundColor(Color.gray.opacity(0.3))
                 VStack {
