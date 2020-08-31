@@ -94,7 +94,7 @@ struct ConstructingArticleView: View {
                     .background(Color.white)
                     .padding(.vertical, 1)
                 
-                CustomUITextView(content: $content)
+                CustomUITextView(content: $content, contentPlaceHolder: contentPlaceHolder)
                     .padding(.top, 4)
                     .padding(.bottom ,1)
                 
@@ -125,13 +125,6 @@ struct ConstructingArticleView: View {
                     } else {
                         print("Insert Failed")
                     }
-//                    print("contents 출력 시작")
-//                    print("title")
-//                    print(self._articleTitle.wrappedValue)
-//                    print("content")
-//                    print(self._content.wrappedValue)
-//                    print("categories, header")
-//                    print(self._selectedHeader.wrappedValue, self._selectedCommunity.wrappedValue)
                     
                 }) {
                     Text("등록")
@@ -144,6 +137,7 @@ struct ConstructingArticleView: View {
 struct CustomUITextView: UIViewRepresentable {
     
     @Binding var content: String
+    var contentPlaceHolder: String
     
     func makeUIView(context: Context) -> UITextView {
         let customUITextView = UITextView()
@@ -153,19 +147,50 @@ struct CustomUITextView: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: UITextView, context: Context) {
-        self.$content.wrappedValue = uiView.text
-        uiView.selectedRange.length = uiView.text.count
+        context.coordinator.textViewSetupView(textView: uiView)
     }
     
     func makeCoordinator() -> Coordinator {
-        return Coordinator(content: $content)
+        return Coordinator(content: $content, contentPlaceHolder: contentPlaceHolder)
     }
     
     class Coordinator: NSObject, UITextViewDelegate {
         @Binding var content: String
+        var contentPlaceHolder: String
+        var isPlaceHolderShow = false
         
-        init(content: Binding<String>) {
+        init(content: Binding<String>, contentPlaceHolder: String) {
             self._content = content
+            self.contentPlaceHolder = contentPlaceHolder
+        }
+        
+        func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
+            if isPlaceHolderShow {
+                textView.text = ""
+                textView.textColor = .black
+                isPlaceHolderShow = false
+            }
+            
+            return true
+        }
+        
+        func textViewDidChange(_ textView: UITextView) {
+            DispatchQueue.main.async {
+                self.$content.wrappedValue = textView.text
+                textView.selectedRange.length = textView.text.count
+                if textView.text == "" {
+                    self.textViewSetupView(textView: textView)
+                }
+            }
+        }
+        
+        func textViewSetupView(textView: UITextView) {
+            if textView.text == "" {
+                textView.text = self.contentPlaceHolder
+                textView.textColor = .gray
+                self.isPlaceHolderShow = true
+                textView.resignFirstResponder()
+            }
         }
     }
 }
