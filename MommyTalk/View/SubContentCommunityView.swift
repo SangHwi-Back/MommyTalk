@@ -54,11 +54,9 @@ struct SubContentCommunityView: View {
                     .fixedSize(horizontal: false, vertical: true)
                     
                     ZStack {
-                        CommunityListView(
-                            category: self.communityCategories[selectedCommunityIndex],
-                            articles: self.viewModel.getArticles())
+                        CommunityListView(category: self.communityCategories[selectedCommunityIndex], articles: self.viewModel.getArticles())
                         GeometryReader { geometry in
-                            NavigationLink(destination: ConstructingArticleView(viewModel: self.viewModel, communityCategories: self.communityCategories)) {
+                            NavigationLink(destination: ConstructingArticleView(viewModel: self.viewModel)) {
                                 ZStack {
                                     Circle()
                                         .foregroundColor(Color.white)
@@ -75,7 +73,7 @@ struct SubContentCommunityView: View {
                         }
                     }.background(Color.white)
                 }
-                .background(Color.init(white: 0.7))
+                .background(Color.init(white: 0.9))
             }
             .navigationBarTitle("")
             .navigationBarHidden(true)

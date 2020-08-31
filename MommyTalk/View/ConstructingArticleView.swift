@@ -7,12 +7,13 @@
 //
 
 import SwiftUI
+import UIKit
 
 struct ConstructingArticleView: View {
     @ObservedObject var viewModel: SubContentCommunityViewModel
     @EnvironmentObject var appEnvironmentObject: AppEnvironmentObject
-    var communityCategories: [String]
-    var headers = ["말머리1","말머리2","말머리3","말머리4"]
+    var communityCategories = ["","마미꿀팁","익명","고민상담","일상","중고","리뷰"]
+    var headers = ["","말머리1","말머리2","말머리3","말머리4"]
     
     @State var articleCategory = ""
     @State var content: String = ""
@@ -28,89 +29,144 @@ struct ConstructingArticleView: View {
     @State var selectedCommunity = ""
     @State var selectedHeader = ""
     
-    
+    let contentPlaceHolder =
+"""
+함께 나누고 싶은 내용을 입력해주세요 :)
+서로를 존중하고 책임감 있는 모습을 기대할게요.
+부적절한 글은 검토 후 자동으로 숨김 처리될 수 있습니다.
+"""
+
     var body: some View {
-        VStack {
-            HStack(spacing: 0) {
-                Button(action: {
-                    self.showCommunityActionSheet = true
-                }) {
-                    HStack {
-                        Text("게시판 선택")
-                        Spacer()
-                        Image(systemName: "arrow.down")
-                    }.padding()
-                }
-                .actionSheet(isPresented: self.$showCommunityActionSheet) {
-                    ActionSheet(
-                        title: Text(verbatim: ""),
-                        message: nil,
-                        buttons: self.communityCategories.map({ item -> Alert.Button in
-                            Alert.Button.default(Text(item)) {
-                                self.selectedCommunity = item
-                            }
-                        })
-                    )
-                }
+        ZStack {
+            VStack(spacing: 0) {
+                HStack(spacing: 0) {
+                    Button(action: {
+                        self.showCommunityActionSheet = true
+                    }) {
+                        HStack {
+                            Text(self.selectedCommunity == "" ? "게시판 선택" : self.selectedCommunity).foregroundColor(Color.gray.opacity(0.6))
+                            Spacer()
+                            Image(systemName: "arrow.down").foregroundColor(Color.black)
+                        }.padding()
+                    }.actionSheet(isPresented: self.$showCommunityActionSheet) {
+                        ActionSheet(
+                            title: Text(verbatim: ""),
+                            message: nil,
+                            buttons: self.communityCategories.map({ item -> Alert.Button in
+                                if item == "" {
+                                    return Alert.Button.cancel(Text("취소"))
+                                } else {
+                                    return Alert.Button.default(Text(item)) {
+                                        if item != "" { self._selectedCommunity.wrappedValue = item }
+                                    }
+                                }
+                            })
+                        )
+                    }
+                    
+                    Button(action: {
+                        self.showHeaderActionSheet = true
+                    }) {
+                        HStack {
+                            Text(self.selectedHeader == "" ? "선택안함" : self.selectedHeader)
+                            Spacer()
+                            Image(systemName: "arrow.down")
+                        }.padding()
+                    }.actionSheet(isPresented: self.$showHeaderActionSheet) {
+                        ActionSheet(
+                            title: Text(verbatim: ""),
+                            message: nil,
+                            buttons: self.headers.map({ item -> Alert.Button in
+                                if item == "" {
+                                    return Alert.Button.cancel()
+                                } else {
+                                    return Alert.Button.default(Text(item)) {
+                                        if item != "" { self._selectedHeader.wrappedValue = item }
+                                    }
+                                }
+                            })
+                        )
+                    }.foregroundColor(Color.black)
+                }.background(Color.white).border(Color.gray.opacity(0.6), width: 1)
                 
-                Button(action: {
-                    self.showHeaderActionSheet = true
-                }) {
-                    HStack {
-                        Text("말머리 선택")
-                        Spacer()
-                        Image(systemName: "arrow.down")
-                    }.padding()
-                }.actionSheet(isPresented: self.$showHeaderActionSheet) {
-                    ActionSheet(
-                        title: Text(verbatim: ""),
-                        message: nil,
-                        buttons: self.headers.map({ item -> Alert.Button in
-                            Alert.Button.default(Text(item)) {
-                                self.selectedHeader = item
-                            }
-                        })
-                    )
-                }
+                TextField("제목을 입력해주세요", text: self.$articleTitle)
+                    .padding()
+                    .background(Color.white)
+                    .padding(.vertical, 1)
+                
+                CustomUITextView(content: $content)
+                    .padding(.top, 4)
+                    .padding(.bottom ,1)
+                
+                HStack {
+                    Spacer()
+                    Image(systemName: "photo.fill").font(.system(size: 22)).padding()
+                    ZStack(alignment: .center) {
+                        Text("GIF").padding(5).border(Color.black, width: 1)
+                    }.padding(.trailing, 10)
+                }.background(Color.white)
             }
-            .foregroundColor(Color.gray.opacity(0.6))
-            .border(Color.gray.opacity(0.6), width: 1)
-            TextField("제목을 입력해주세요", text: self.$articleTitle)
-                .padding()
-            TextField("asdf", text: self.$content)
-                .padding()
-            
-            
+            .navigationBarTitle(Text("글쓰기"), displayMode: .inline)
+            .navigationBarItems(trailing:
+                Button(action: {
+                    let dateFormatter = DateFormatter()
+                    dateFormatter.dateFormat = "YYYY.MM.dd"
+                    dateFormatter.locale = Locale(identifier: "ko_KR")
+
+                    let article = Article(
+                        category: self._selectedCommunity.wrappedValue, content: self._content.wrappedValue,
+                        isHashTag: 0, profileImageId: "",
+                        replyCount: 0, rowCreated: dateFormatter.string(from: Date()),
+                        id: UUID().uuidString, title: self._articleTitle.wrappedValue,
+                        userLevel: "1", userName: "테스트유저", viewCount: 1)
+
+                    if self.viewModel.createCommunityArticle(article: article) {
+                        print("Insert Success")
+                    } else {
+                        print("Insert Failed")
+                    }
+//                    print("contents 출력 시작")
+//                    print("title")
+//                    print(self._articleTitle.wrappedValue)
+//                    print("content")
+//                    print(self._content.wrappedValue)
+//                    print("categories, header")
+//                    print(self._selectedHeader.wrappedValue, self._selectedCommunity.wrappedValue)
+                    
+                }) {
+                    Text("등록")
+                }.foregroundColor(.gray)
+            )
+        }.background(Color.init(white: 0.9))
+    }
+}
+
+struct CustomUITextView: UIViewRepresentable {
+    
+    @Binding var content: String
+    
+    func makeUIView(context: Context) -> UITextView {
+        let customUITextView = UITextView()
+        customUITextView.delegate = context.coordinator
+        customUITextView.selectedRange = NSRange(location: 0, length: 0)
+        return customUITextView
+    }
+    
+    func updateUIView(_ uiView: UITextView, context: Context) {
+        self.$content.wrappedValue = uiView.text
+        uiView.selectedRange.length = uiView.text.count
+    }
+    
+    func makeCoordinator() -> Coordinator {
+        return Coordinator(content: $content)
+    }
+    
+    class Coordinator: NSObject, UITextViewDelegate {
+        @Binding var content: String
+        
+        init(content: Binding<String>) {
+            self._content = content
         }
-        .navigationBarTitle(Text("글쓰기"), displayMode: .inline)
-        .navigationBarItems(trailing:
-            Button(action: {
-                let dateFormatter = DateFormatter()
-                dateFormatter.dateFormat = "YYYY.MM.dd"
-                dateFormatter.locale = Locale(identifier: "ko_KR")
-                
-                let article = Article(
-                    category: self.articleCategory,
-                    content: self.content,
-                    isHashTag: 0,
-                    profileImageId: "",
-                    replyCount: 0,
-                    rowCreated: dateFormatter.string(from: Date()),
-                    id: UUID().uuidString,
-                    title: self.articleTitle,
-                    userLevel: "1",
-                    userName: "테스트유저",
-                    viewCount: 1)
-                
-                if self.viewModel.createCommunityArticle(article: article) {
-                    print("Insert Success")
-                } else {
-                    print("Insert Failed")
-                }
-            }) {
-                Text("등록")
-            }.foregroundColor(.gray)
-        )
     }
 }
 
