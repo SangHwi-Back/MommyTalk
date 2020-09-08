@@ -11,26 +11,34 @@ import SwiftUI
 
 class SubContentCommunityViewModel: ObservableObject {
     
-    @Published private var model: CommunityLists<String> = createCategoryArticles()
-    
+    private var model: CommunityLists<String> = createCategoryArticles()
+    private(set) var articles: [Article]
     private(set) var category: String
     private var appDelegate: AppDelegate
     
     init(_ category: String = "명예의 전당") {
         self.category = category
         self.appDelegate = UIApplication.shared.delegate as! AppDelegate
+        self.model.queryMostRepliedArticles(count: 100)
+        self.articles = self.model.articles
     }
     
     private static func createCategoryArticles(_ category: String = "명예의 전당") -> CommunityLists<String> {
-        return CommunityLists("명예의 전당", dbUtil: (UIApplication.shared.delegate as! AppDelegate).sQLiteDatabaseUtil!)
+        return CommunityLists(category, dbUtil: (UIApplication.shared.delegate as! AppDelegate).sQLiteDatabaseUtil!)
     }
     
-    func getArticles() -> [Article] {
-        return model.articles
-    }
-    
-    func queryOtherArticles(_ category: String) {
-        model.queryArticles(category)
+    func getArticles(category: String) -> [Article] {
+        if category == "명예의 전당" {
+            self.model.queryMostRepliedArticles(count: 100)
+        } else if category == "인기" {
+            self.model.queryMostWatchedArticles(count: 100)
+        } else {
+            self.model.queryArticles(self.category)
+        }
+        
+        self.articles = self.model.articles
+        
+        return self.model.articles
     }
     
     func createCommunityArticle(article: Article) -> Bool {

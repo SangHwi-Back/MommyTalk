@@ -38,7 +38,6 @@ struct SubContentCommunityView: View {
                                         .foregroundColor(self.$selectedCommunityIndex.wrappedValue == inx ? .yellow : .white)
                                     Button(action: {
                                         self.selectedCommunityIndex = inx
-                                        self.viewModel.queryOtherArticles(self.communityCategories[self.selectedCommunityIndex]) // 다른 카테고리의 게시글을 가져온다.
                                     }) {
                                         Text(self.communityCategories[inx])
                                             .font(.subheadline).foregroundColor(.black)
@@ -54,7 +53,8 @@ struct SubContentCommunityView: View {
                     .fixedSize(horizontal: false, vertical: true)
                     
                     ZStack {
-                        CommunityListView(category: self.communityCategories[selectedCommunityIndex], articles: self.viewModel.getArticles())
+                        CommunityListView(category: self.communityCategories[selectedCommunityIndex])
+                            .environmentObject(self.viewModel)
                         GeometryReader { geometry in
                             NavigationLink(destination: ConstructingArticleView(viewModel: self.viewModel)) {
                                 ZStack {
@@ -82,8 +82,8 @@ struct SubContentCommunityView: View {
 }
 
 struct CommunityListView: View {
+    @EnvironmentObject var viewModel: SubContentCommunityViewModel
     var category: String
-    var articles: [Article]
     
     var body: some View {
         GeometryReader { geometry in
@@ -93,23 +93,12 @@ struct CommunityListView: View {
     
     @ViewBuilder
     private func body(for size: CGSize) -> some View {
-        if articles.count == 0 {
-            Text("게시글이 없습니다.").foregroundColor(.red).font(.largeTitle)
-        } else {
-            List(0 ..< self.articles.count) { inx in
-                NavigationLink(destination: DetailArticleView(articleData: self.articles[inx])) {
-                    CommunityRow(
-                        replyCount: self.articles[inx].replyCount,
-                        rowTitle: self.articles[inx].title,
-                        isHashTag: self.articles[inx].isHashTag,
-                        profileImageId: nil,
-                        userName: self.articles[inx].userName,
-                        userLevel: self.articles[inx].userLevel,
-                        rowCreated: self.articles[inx].rowCreated,
-                        viewCount: self.articles[inx].viewCount
-                    )
-                }
+        List(self.viewModel.getArticles(category: self.category).indices, id: \.self) { articleIndex in
+            NavigationLink(destination: DetailArticleView(articleData: self.viewModel.articles[articleIndex])) {
+                CommunityRow(article: self.viewModel.articles[articleIndex])
             }
+        }.onAppear {
+            self.viewModel.objectWillChange.send()
         }
     }
 }

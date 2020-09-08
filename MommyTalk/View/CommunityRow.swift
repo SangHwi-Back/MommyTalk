@@ -10,10 +10,21 @@ import SwiftUI
 
 struct CommunityRow: View {
     
+    init?(article: Article) {
+        self.replyCount = article.replyCount
+        self.rowTitle = article.title
+        self.isHashTag = article.isHashTag
+        self.profileImageId = article.profileImageId.isEmpty ? nil : article.profileImageId
+        self.userLevel = article.userLevel
+        self.userName = article.userName
+        self.rowCreated = article.rowCreated
+        self.viewCount = article.viewCount
+    }
+    
     var replyCount: Int = 0
     var rowTitle: String = ""
     var isHashTag: Int
-    var profileImageId: UUID?
+    var profileImageId: String?
     var userName: String?
     var userLevel: String?
     var rowCreated: String
@@ -26,7 +37,7 @@ struct CommunityRow: View {
                     .font(.callout)
                     .lineLimit(2).frame(alignment: .leading)
                 HStack {
-                    Image(self.profileImageId?.uuidString ?? "defaultProfile")
+                    Image(self.profileImageId ?? "defaultProfile")
                     Text(self.userName ?? "Unknown")
                     ZStack {
                         RoundedRectangle(cornerRadius: 25)

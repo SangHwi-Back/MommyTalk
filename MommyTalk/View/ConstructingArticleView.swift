@@ -12,8 +12,10 @@ import UIKit
 struct ConstructingArticleView: View {
     @ObservedObject var viewModel: SubContentCommunityViewModel
     @EnvironmentObject var appEnvironmentObject: AppEnvironmentObject
-    var communityCategories = ["","마미꿀팁","익명","고민상담","일상","중고","리뷰"]
-    var headers = ["","말머리1","말머리2","말머리3","말머리4"]
+    var headers = ["","태교","임신건강","임신라이프","임신영양","출산","육아","선택안함"]
+    let communityCategories2 = [
+        "", "최신", "마미꿀팁", "익명", "고민상담", "일상", "중고", "리뷰", "이벤트"
+    ]
     
     @State var articleCategory = ""
     @State var content: String = ""
@@ -40,53 +42,8 @@ struct ConstructingArticleView: View {
         ZStack {
             VStack(spacing: 0) {
                 HStack(spacing: 0) {
-                    Button(action: {
-                        self.showCommunityActionSheet = true
-                    }) {
-                        HStack {
-                            Text(self.selectedCommunity == "" ? "게시판 선택" : self.selectedCommunity).foregroundColor(Color.gray.opacity(0.6))
-                            Spacer()
-                            Image(systemName: "arrow.down").foregroundColor(Color.black)
-                        }.padding()
-                    }.actionSheet(isPresented: self.$showCommunityActionSheet) {
-                        ActionSheet(
-                            title: Text(verbatim: ""),
-                            message: nil,
-                            buttons: self.communityCategories.map({ item -> Alert.Button in
-                                if item == "" {
-                                    return Alert.Button.cancel(Text("취소"))
-                                } else {
-                                    return Alert.Button.default(Text(item)) {
-                                        if item != "" { self._selectedCommunity.wrappedValue = item }
-                                    }
-                                }
-                            })
-                        )
-                    }
-                    
-                    Button(action: {
-                        self.showHeaderActionSheet = true
-                    }) {
-                        HStack {
-                            Text(self.selectedHeader == "" ? "선택안함" : self.selectedHeader)
-                            Spacer()
-                            Image(systemName: "arrow.down")
-                        }.padding()
-                    }.actionSheet(isPresented: self.$showHeaderActionSheet) {
-                        ActionSheet(
-                            title: Text(verbatim: ""),
-                            message: nil,
-                            buttons: self.headers.map({ item -> Alert.Button in
-                                if item == "" {
-                                    return Alert.Button.cancel()
-                                } else {
-                                    return Alert.Button.default(Text(item)) {
-                                        if item != "" { self._selectedHeader.wrappedValue = item }
-                                    }
-                                }
-                            })
-                        )
-                    }.foregroundColor(Color.black)
+                    ActionSheetButton(isShow: $showCommunityActionSheet, selectedValue: $selectedCommunity, dataArray: communityCategories2, blankValue: "게시판 선택")
+                    ActionSheetButton(isShow: $showHeaderActionSheet, selectedValue: $selectedHeader, dataArray: headers, blankValue: "말머리 선택")
                 }.background(Color.white).border(Color.gray.opacity(0.6), width: 1)
                 
                 TextField("제목을 입력해주세요", text: self.$articleTitle)
@@ -113,12 +70,7 @@ struct ConstructingArticleView: View {
                     dateFormatter.dateFormat = "YYYY.MM.dd"
                     dateFormatter.locale = Locale(identifier: "ko_KR")
 
-                    let article = Article(
-                        category: self._selectedCommunity.wrappedValue, content: self._content.wrappedValue,
-                        isHashTag: 0, profileImageId: "",
-                        replyCount: 0, rowCreated: dateFormatter.string(from: Date()),
-                        id: UUID().uuidString, title: self._articleTitle.wrappedValue,
-                        userLevel: "1", userName: "테스트유저", viewCount: 1)
+                    let article = Article(category: self.selectedCommunity, content: self.content, isHashTag: 0, profileImageId: "", replyCount: 0, rowCreated: dateFormatter.string(from: Date()), id: UUID().uuidString, title: self.articleTitle, userLevel: "1", userName: "테스트유저", viewCount: 1)
 
                     if self.viewModel.createCommunityArticle(article: article) {
                         print("Insert Success")
@@ -131,6 +83,48 @@ struct ConstructingArticleView: View {
                 }.foregroundColor(.gray)
             )
         }.background(Color.init(white: 0.9))
+    }
+}
+
+struct ActionSheetButton: View {
+    @Binding var isShow: Bool
+    @Binding var selectedValue: String
+    var dataArray: [String]
+    var blankValue: String
+    
+    var body: some View {
+        Button(action: {
+            self.$isShow.wrappedValue = true
+        }) {
+            HStack {
+                Text(self.selectedValue == "" ? blankValue : self.selectedValue)
+                Spacer()
+                Image(systemName: "arrow.down")
+            }.padding()
+        }
+        .actionSheet(isPresented: self.$isShow) {
+            ActionSheet(
+                title: Text(verbatim: ""),
+                message: nil,
+                buttons: self.dataArray.map({ item -> Alert.Button in
+                    if item == "" {
+                        return Alert.Button.cancel()
+                    } else {
+                        return Alert.Button.default(Text(item)) {
+                            if item != "" { self._selectedValue.wrappedValue = item }
+                        }
+                    }
+                })
+            )
+        }
+//        .sheet(isPresented: self.$isShow, content: {
+//            Picker(selection: self.$selectedValue, label: Text("")) {
+//                ForEach(0 ..< self.dataArray.count) {
+//                    Text(self.dataArray[$0]).id(self.dataArray[$0])
+//                }
+//            }
+//        })
+        .foregroundColor(self.selectedValue == "" ? .gray : .black)
     }
 }
 
@@ -197,8 +191,7 @@ struct CustomUITextView: UIViewRepresentable {
 
 struct ConstructingArticleView_Previews: PreviewProvider {
     static var previews: some View {
-        ConstructingArticleView(viewModel: SubContentCommunityViewModel(), communityCategories: [
-            "명예의 전당", "인기", "최신", "마미꿀팁", "익명", "고민상담", "일상", "중고", "리뷰", "이벤트"
-        ])
+        ConstructingArticleView(
+            viewModel: SubContentCommunityViewModel()        )
     }
 }

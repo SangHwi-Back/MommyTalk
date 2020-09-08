@@ -18,11 +18,41 @@ struct CommunityLists<ArticleId> where ArticleId: Equatable {
     init(_ category: String, dbUtil: SQLiteDatabaseUtil) {
         self.category = category
         self.dbUtil = dbUtil
-        self.articles = self.dbUtil.queryCommunityArticles(category: self.category)
+        self.articles = self.dbUtil.queryMostRepliedArticles(count: 100) ?? [Article]()
     }
     
-    mutating func queryArticles(_ category: String) {
-        self.articles = dbUtil.queryCommunityArticles(category: category)
+    @discardableResult
+    mutating func queryArticles(_ category: String) -> Bool {
+        if let articles = dbUtil.queryCommunityArticles(category: category) {
+            self.articles = articles
+            return true
+        } else {
+            self.articles = [Article]()
+            return false
+        }
+    }
+    
+    @discardableResult
+    mutating func queryMostRepliedArticles(count: Int) -> Bool {
+        if let results = dbUtil.queryMostRepliedArticles(count: count) {
+            self.articles = results
+            return true
+        } else {
+            self.articles = [Article]()
+            return false
+        }
+    }
+    
+    @discardableResult
+    mutating func queryMostWatchedArticles(count: Int) -> Bool {
+        if let results = dbUtil.queryMostWatchedArticles(count: count) {
+            self.articles = results
+            return true
+        } else {
+            self.articles = [Article]()
+            return false
+        }
+        
     }
     
     func createCommunityArticle(article: Article) -> Bool {
